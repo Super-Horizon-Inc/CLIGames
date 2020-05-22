@@ -1,7 +1,7 @@
 # CLIGames
 This is a program using Command Line Interface platform to design based role playing games.
 
-# The stories:
+* The stories:
 
   * As a player I want to create a character
   * As a player I want to explore
@@ -9,7 +9,7 @@ This is a program using Command Line Interface platform to design based role pla
   * As a player I want to save and resume a game
   * And maybe more
   
-# Technical constraints:
+* Technical constraints:
 
   * Use Java
   * Libraries and Frameworks are for testing and build pipelines only
