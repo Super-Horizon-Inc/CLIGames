@@ -1,6 +1,7 @@
 # CLIGames
 This is a program using Command Line Interface platform to design based role playing games.
 
+
 * The stories:
 
   * As a player I want to create a character
