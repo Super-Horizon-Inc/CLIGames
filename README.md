@@ -19,3 +19,7 @@ This is a program using Command Line Interface platform to design based role pla
   * Use best in industry agile engineering practices
   * Build for the command line
   * ...
+
+* Useful Links:
+
+ * Hibernate Dependency: https://mvnrepository.com/artifact/org.hibernate/hibernate-core/5.4.16.Final
