@@ -22,4 +22,4 @@ This is a program using Command Line Interface platform to design based role pla
 
 * Useful Links:
 
- * Hibernate Dependency: https://mvnrepository.com/artifact/org.hibernate/hibernate-core/5.4.16.Final
+  * Hibernate Dependency: https://mvnrepository.com/artifact/org.hibernate/hibernate-core/5.4.16.Final
