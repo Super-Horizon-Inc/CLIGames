@@ -1,4 +1,4 @@
-* Instructions to install app on your local machine:
+# Instructions to install app on your local machine:
 
   * Installing Maven:
     * Link: http://maven.apache.org/install.html
@@ -12,7 +12,7 @@
     
   * Importing Maven Dependencies: click on `import Maven Project when small window pops-up`
   
-* Usefull info:
+# Usefull info:
 
   * Creating Maven project: Use default IntelliJ Maven artifact.quickstart (choose import Maven project when small window pop-up)
 
