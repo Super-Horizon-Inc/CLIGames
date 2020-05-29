@@ -1,7 +1,19 @@
 # CLIGames
 This is a program using Command Line Interface platform to design based role playing games.
 
-* Useful links:
+* The Rules:
+  * As a player I can create a character
+  * As a player I can explore
+  * As a player I can gain experience through fighting
+  * As a player I can save and resume this game
+  
+* Technical Constraints:
+  * Used Java
+  * Libraries and Frameworks are used for testing and build piplines only
+  * Used best in industry agile engineering practices
+  * Built for the command line
+
+* Instructions to install app on your local machine:
 
   * Installing Maven:
     * Link: http://maven.apache.org/install.html
@@ -9,17 +21,21 @@ This is a program using Command Line Interface platform to design based role pla
       * M2_HOME = extracted_Maven_folder_path
       * Path += M2_HOME/bin
     * Check installed version: mvn -v
-  
-  * Creating Maven project: Use default IntelliJ Maven artifact.quickstart (choose import Maven project when small window pop-up)
     
+  * Installing Oracle JDBC Driver and Adding it to Maven Repository:
+    * Follow this link: https://mkyong.com/maven/how-to-add-oracle-jdbc-driver-in-your-maven-local-repository/
+    
+  * Importing Maven Dependencies: click on `import Maven Project when small window pops-up`
+  
+* Usefull info:
+
+  * Creating Maven project: Use default IntelliJ Maven artifact.quickstart (choose import Maven project when small window pop-up)
+
   * Adding dependencies to Maven:
     * Hibernate:
       * Link: https://mvnrepository.com/artifact/org.hibernate/hibernate-core/5.4.16.Final
       * Add the following to Maven pom.xml (inside IntelliJ)
         https://github.com/develop1992/CLIGames/issues/3#issue-626851622 (all inside <dependencies>)
-    * Oracle:
-      * Following this link: https://mkyong.com/maven/how-to-add-oracle-jdbc-driver-in-your-maven-local-repository/
-      * Adding to dependencies similar to Hibernate
       
   * Installing dependencies automatically by Maven in IntelliJ terminal: mvn install
   
