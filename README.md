@@ -29,14 +29,17 @@ This is a program using Command Line Interface platform to design based role pla
         * Path += M2_HOME\bin
       
   * Maven Dependencies: https://mvnrepository.com/
-    * List of Dependencies:
+    * List of Dependencies: (need to add in pom file under <dependencies> element)
       * Hibernate: 
         * Dependency in https://mvnrepository.com/artifact/org.hibernate/hibernate-core/5.4.16.Final
         * Add the following within Maven pom.xml file:
           https://github.com/develop1992/CLIGames/issues/3#issue-626851622
       * Oracle:
-        * Dependency in https://mvnrepository.com/artifact/oracle/oracle-jdbc/12.1.0.2
+        * Follow https://mkyong.com/maven/how-to-add-oracle-jdbc-driver-in-your-maven-local-repository/
         * Same as Hibernate
+    
+    * Install dependencies: mvn install (in terminal)
+    
         
         
     
