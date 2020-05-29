@@ -14,7 +14,8 @@
   
 # Usefull info:
 
-  * Creating Maven project: Use default IntelliJ Maven artifact.quickstart (choose import Maven project when small window pop-up)
+  * Creating Maven project:
+    * Use default IntelliJ Maven artifact.quickstart (choose import Maven project when small window pop-up)
 
   * Adding dependencies to Maven:
     * Hibernate:
@@ -22,7 +23,8 @@
       * Add the following to Maven pom.xml (inside IntelliJ)
         https://github.com/develop1992/CLIGames/issues/3#issue-626851622 (all inside <dependencies>)
       
-  * Installing dependencies automatically by Maven in IntelliJ terminal: mvn install
+  * Installing dependencies automatically by Maven in IntelliJ terminal: 
+    * mvn install
   
   * Steps to do git in Git Bash terminal:
     * git pull origin master    (pull code from master branch to my local: for latest code)
