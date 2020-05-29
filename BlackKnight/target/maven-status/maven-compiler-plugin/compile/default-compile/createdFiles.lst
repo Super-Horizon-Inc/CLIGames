@@ -1,0 +1,7 @@
+core\model\Weapon.class
+core\model\Character.class
+core\model\MainCharacter.class
+core\model\Map.class
+App.class
+core\model\Skill.class
+core\model\Monster.class
