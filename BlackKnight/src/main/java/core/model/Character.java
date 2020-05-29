@@ -93,6 +93,7 @@ public abstract class Character {
     public boolean setState(boolean state) {
         return this.state = state;
     }
+    
 /*
     public List<Weapon> getWeapons() {
         return this.weapons;
