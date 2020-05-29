@@ -32,7 +32,7 @@ This is a program using Command Line Interface platform to design based role pla
     * git checkout -b [name_of_branch]    (create a new branch and switch to it)
     * git status  (show which files are changed by me)
     * git add [path_changed_file1] [path_changed_file2] ... (get changed files be ready to be committed)
-    * git commit -m "message_explain_what_you_did"  (pack the changed files up along with message, still on local)
+    * git commit -S -m "message_explain_what_you_did"  (pack the changed files up along with message(-m) and signed(-S), still on local)
       (add and commit should group related files together, so we can provide clear explaination, they may be repeated many times)
     * git push origin [name_of_branch]  (push all files from local to remote)
     * Go to Github account and create new pull request.
