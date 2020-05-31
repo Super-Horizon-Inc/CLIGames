@@ -1,10 +1,14 @@
 package core.model;
 
+import org.hibernate.annotations.DiscriminatorFormula;
+import org.hibernate.annotations.DiscriminatorOptions;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorFormula("case when gold is null then 'MainCharacter' else 'Monster' end")
 /**
  * An abstract class for holding common fields, actions of MainCharacter and Monster.
  */
@@ -12,15 +16,30 @@ public abstract class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int health;
+
+    private short health;
+
     private short characterLevel;
+
+    @Column(length = 50)
     private String name;
+
+    @Column(length = 10)
     private String position;
-    private String type;
+
     private String image;
+
     private boolean state;
+
+    @Column(length = 20)
+    private String type;
+
     private int mapId;
+
 //    @OneToMany(cascade = CascadeType.ALL)
+//    @ElementCollection
+//    @CollectionTable(name="Weapons", joinColumns = @JoinColumn(name="id"))
+//    @Column(name="nickname")
 //    private List<Weapon> weapons;
 
     /**
@@ -61,7 +80,7 @@ public abstract class Character {
      * Getter method for health field.
      * @return an integer number which is Character health.
      */
-    public int getHealth() {
+    public short getHealth() {
         return this.health;
     }
 
@@ -70,7 +89,7 @@ public abstract class Character {
      * @param health an integer number which is assigned to Character health.
      * @return First, assign health parameter to Character health. Then, return an integer which is Character health.
      */
-    public int setHealth(int health) {
+    public short setHealth(short health) {
         return this.health = health;
     }
 
@@ -152,7 +171,7 @@ public abstract class Character {
 
     /**
      * Setter method for type field. This method can also be used as a combination getter and setter.
-     * @param type an integer number which is assigned to Character type.
+     * @param type string which is assigned to Character type.
      * @return First, assign type parameter to Character type. Then, return a string which is Character type.
      */
     public String setType(String type) {
