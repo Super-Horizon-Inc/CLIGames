@@ -1,7 +1,10 @@
 package util;
 
-import org.hibernate.SessionFactory;
+import core.model.MainCharacter;
+import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import core.model.Character;
+import core.model.Weapon;
 
 public class HibernateUtil {
     private static final SessionFactory sessionFactory = buildSessionFactory();
@@ -27,6 +30,19 @@ public class HibernateUtil {
     }
 
     public static void main(String[] args) {
-        buildSessionFactory();
+
+        getSessionFactory();
+
+//        // obtains the session
+//        Session session = sessionFactory.openSession();
+//        session.beginTransaction();
+//
+//        // write our test code
+//        Weapon weapon = session.find(Weapon.class,12);
+//        Character main = session.find(Character.class,9);
+//        main.setWeapon(weapon);
+//        session.save(main);
+//        session.getTransaction().commit();
+//        shutdown();
     }
 }
