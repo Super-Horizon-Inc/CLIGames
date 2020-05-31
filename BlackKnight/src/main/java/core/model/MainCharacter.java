@@ -1,6 +1,6 @@
 package core.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -8,25 +8,24 @@ import java.util.List;
  * A class for main character of the game.
  */
 public class MainCharacter extends Character {
-    private List<Skill> skills;
+    //private List<Skill> skills;
     private int gold;
 
     /**
      * Getter method for skills.
      * @return a List of skills that main character has.
      */
-    public List<Skill> getSkill() {
-        return this.skills;
-    }
+//    public List<Skill> getSkill() { return this.skills;
+//    }
 
     /**
      * Setter method for skills.
      * @param skill a new skill which will be added to skill list.
      * @return true if new skill is added, false otherwise.
      */
-    public boolean setSkill(Skill skill) {
-        return this.skills.add(skill);
-    }
+//    public boolean setSkill(Skill skill) {
+//        return this.skills.add(skill);
+//    }
 
     /**
      * Getter method for gold field.

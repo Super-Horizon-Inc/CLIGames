@@ -12,6 +12,13 @@
         <property name="connection.password">1234</property>
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 
+        <!-- display sql code -->
+        <property name="show_sql">true</property>
+
         <mapping class="core.model.Character"/>
+        <mapping class="core.model.MainCharacter"/>
+        <mapping class="core.model.Monster"/>
+
+
     </session-factory>
 </hibernate-configuration>
