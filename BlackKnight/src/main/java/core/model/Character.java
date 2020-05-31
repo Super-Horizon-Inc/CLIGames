@@ -209,5 +209,4 @@ public class Character {
         }
         return this.weapons.add(weapon);
     }
-
 }
