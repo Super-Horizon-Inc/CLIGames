@@ -34,8 +34,6 @@ public class Character {
     @Column(length = 20)
     private String type;
 
-    private int mapId;
-
     // Hibernate One-to-Many Association on Join Table Annotations Example
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -111,23 +109,6 @@ public class Character {
      */
     public short setLevel(short characterLevel) {
         return this.characterLevel = characterLevel;
-    }
-
-    /**
-     * Getter method for mapId field.
-     * @return an integer number which is id of Map where Character is currently in.
-     */
-    public int getMapId() {
-        return this.mapId;
-    }
-
-    /**
-     * Setter method for mapId field. This method can also be used as a combination getter and setter.
-     * @param mapId an integer number which is assigned to Character mapId.
-     * @return First, assign mapId parameter to Character mapId. Then, return an integer which is id of Map where Character is currently in.
-     */
-    public int setMapId(int mapId) {
-        return this.mapId = mapId;
     }
 
     /**
@@ -209,5 +190,4 @@ public class Character {
         }
         return this.weapons.add(weapon);
     }
-
 }

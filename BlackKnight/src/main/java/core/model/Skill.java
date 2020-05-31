@@ -1,10 +1,16 @@
 package core.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Skill {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    private int characterId;
-    private MainCharacter character;
 
     public int getId() {
         return this.id;
@@ -21,20 +27,5 @@ public class Skill {
     public String setName(String name) {
         return this.name = name;
     }
-
-    public int getCharacterId() {
-        return this.characterId;
-    }
-
-    public int setCharacterId(int characterId) {
-        return this.characterId = characterId;
-    }
-
-    public MainCharacter getCharacter() {
-        return this.character;
-    }
-
-    public MainCharacter setCharacter() {
-        return this.character = character;
-    }
+    
 }
