@@ -18,7 +18,7 @@
         <mapping class="core.model.Character"/>
         <mapping class="core.model.MainCharacter"/>
         <mapping class="core.model.Monster"/>
-
+        <mapping class="core.model.Weapon"/>
 
     </session-factory>
 </hibernate-configuration>

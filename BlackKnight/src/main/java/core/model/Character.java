@@ -1,18 +1,18 @@
 package core.model;
 
 import org.hibernate.annotations.DiscriminatorFormula;
-import org.hibernate.annotations.DiscriminatorOptions;
-
 import javax.persistence.*;
-import java.util.List;
+import java.util.*;
 
 @Entity
+// Hibernate Hierarchy Mapping per Table Association Annotations Example
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorFormula("case when gold is null then 'MainCharacter' else 'Monster' end")
 /**
  * An abstract class for holding common fields, actions of MainCharacter and Monster.
  */
-public abstract class Character {
+public class Character {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -36,11 +36,14 @@ public abstract class Character {
 
     private int mapId;
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @ElementCollection
-//    @CollectionTable(name="Weapons", joinColumns = @JoinColumn(name="id"))
-//    @Column(name="nickname")
-//    private List<Weapon> weapons;
+    // Hibernate One-to-Many Association on Join Table Annotations Example
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "Character_Weapons",
+            joinColumns = @JoinColumn(name = "Character_Id", referencedColumnName = "Id"),
+            inverseJoinColumns = @JoinColumn(name = "Weapon_Id", referencedColumnName = "Id")
+    )
+    private Set<Weapon> weapons;
 
     /**
      * Getter method for id field.
@@ -195,15 +198,16 @@ public abstract class Character {
         return this.state = state;
     }
     
-/*
-    public List<Weapon> getWeapons() {
+
+    public Set<Weapon> getWeapons() {
         return this.weapons;
     }
 
     public boolean setWeapon(Weapon weapon) {
+        if(this.weapons == null) {
+            this.weapons = new HashSet<Weapon>();
+        }
         return this.weapons.add(weapon);
     }
-
- */
 
 }
