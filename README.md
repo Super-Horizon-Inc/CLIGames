@@ -34,9 +34,14 @@ This is a program using Command Line Interface platform to design based role pla
     * git status  (show which files are changed by me)
     * git add [path_changed_file1] [path_changed_file2] ... (get changed files be ready to be committed)
       * git add --all  (do this if want to push all RELATED modified file, don't do this if the files will be divided to many groups)
-    * git commit -m "message_explain_what_you_did"  (pack the changed files up along with message(-m), still on local)
+    * git commit -S -m "message_explain_what_you_did"  (pack the changed files up along with message(-m) and signed(-S), still on local)
       * (add and commit should group related files together, so we can provide clear explaination, they may be repeated many times)
       * git checkout -b [name_of_branch]  (do this if forgot to create new branch in the beginning)
     * git push origin [name_of_branch]  (push all files from local to remote)
     * Go to Github account and create new pull request.
-  
+    * Generate key to use for signed commits:
+      * gpg --gen-key
+        * ( at prompt time, please enter your name (ex: Scott Chacon) and your email (ex: schacon@gmail.com) )
+        * set prephrase password, you will be using it for the first time running git commit -S -m "message"
+      * git config --global user.signingkey `Key that was generated when you ran gpg --gen-key (the key is what shows up under pub section`
+      
