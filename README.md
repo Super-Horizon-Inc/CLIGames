@@ -39,7 +39,7 @@ This is a program using Command Line Interface platform to design based role pla
       * git checkout -b [name_of_branch]  (do this if forgot to create new branch in the beginning)
     * git push origin [name_of_branch]  (push all files from local to remote)
     * Go to Github account and create new pull request.
-    * Generate key to use for signed commits:
+    * Generate key to use for signed commits: ( follow https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work )
       * gpg --gen-key
         * ( at prompt time, please enter your name (ex: Scott Chacon) and your email (ex: schacon@gmail.com) )
         * set prephrase password, you will be using it for the first time running git commit -S -m "message"
