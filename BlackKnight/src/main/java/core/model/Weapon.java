@@ -6,7 +6,6 @@ import javax.persistence.*;
 public class Weapon {
 
     @Id
-    
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
