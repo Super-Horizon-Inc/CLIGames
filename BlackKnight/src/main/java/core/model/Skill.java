@@ -1,6 +1,7 @@
 package core.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  * A class for Skills of Main Character of the game.
@@ -11,7 +12,9 @@ public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(length = 20)
+
+    //@Column(length = 20)
+    @Size(min = 1, max = 20)
     private String name;
 
     /**

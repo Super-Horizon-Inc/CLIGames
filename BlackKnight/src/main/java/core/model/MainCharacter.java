@@ -1,6 +1,7 @@
 package core.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.*;
 
 /**
@@ -9,7 +10,9 @@ import java.util.*;
 @Entity
 public class MainCharacter extends Character {
 
+    @PositiveOrZero
     private int gold;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "Character_Skills",
