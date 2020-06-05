@@ -4,36 +4,29 @@ import org.hibernate.annotations.DiscriminatorFormula;
 import javax.persistence.*;
 import java.util.*;
 
+/**
+ * An abstract class for holding common fields, and actions of MainCharacter and Monster classes.
+ */
 @Entity
 // Hibernate Hierarchy Mapping per Table Association Annotations Example
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorFormula("case when gold is null then 'MainCharacter' else 'Monster' end")
-/**
- * An abstract class for holding common fields, actions of MainCharacter and Monster.
- */
 public class Character {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
     private short health;
-
     private short characterLevel;
-
     @Column(length = 50)
     private String name;
-
     @Column(length = 10)
     private String position;
-
+    @Column(length = 500)
     private String image;
-
     private boolean state;
-
     @Column(length = 20)
     private String type;
-
     // Hibernate One-to-Many Association on Join Table Annotations Example
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -52,7 +45,7 @@ public class Character {
     }
 
     /**
-     * Setter method for id field. This method can also be used as a combination getter and setter.
+     * Setter method for id field. This method can also be used as a combination of getter and setter.
      * @param id an integer number which is assigned to Character id.
      * @return First, assign id parameter to Character id. Then, return an integer which is Character id.
      */
@@ -69,7 +62,7 @@ public class Character {
     }
 
     /**
-     * Setter method for name field. This method can also be used as a combination getter and setter.
+     * Setter method for name field. This method can also be used as a combination of getter and setter.
      * @param name a string which is assigned to Character name.
      * @return First, assign name parameter to Character name. Then, return a string which is Character name.
      */
@@ -86,7 +79,7 @@ public class Character {
     }
 
     /**
-     * Setter method for health field. This method can also be used as a combination getter and setter.
+     * Setter method for health field. This method can also be used as a combination of getter and setter.
      * @param health an integer number which is assigned to Character health.
      * @return First, assign health parameter to Character health. Then, return an integer which is Character health.
      */
@@ -103,7 +96,7 @@ public class Character {
     }
 
     /**
-     * Setter method for characterLevel field. This method can also be used as a combination getter and setter.
+     * Setter method for characterLevel field. This method can also be used as a combination of getter and setter.
      * @param characterLevel a short number which is assigned to Character level.
      * @return First, assign characterLevel parameter to Character characterLevel. Then, return an integer which is Character level.
      */
@@ -120,7 +113,7 @@ public class Character {
     }
 
     /**
-     * Setter method for image field. This method can also be used as a combination getter and setter.
+     * Setter method for image field. This method can also be used as a combination of getter and setter.
      * @param image a string URL which is assigned to Character image.
      * @return First, assign image parameter to Character image. Then, return a string URL which is address of Character image.
      */
@@ -137,7 +130,7 @@ public class Character {
     }
 
     /**
-     * Setter method for position field. This method can also be used as a combination getter and setter.
+     * Setter method for position field. This method can also be used as a combination of getter and setter.
      * @param position a string which is assigned to Character position.
      * @return First, assign position parameter to Character position. Then, return a string which is Character position. The string contains of 2 coordinates separated by a comma.
      */
@@ -154,7 +147,7 @@ public class Character {
     }
 
     /**
-     * Setter method for type field. This method can also be used as a combination getter and setter.
+     * Setter method for type field. This method can also be used as a combination of getter and setter.
      * @param type string which is assigned to Character type.
      * @return First, assign type parameter to Character type. Then, return a string which is Character type.
      */
@@ -171,20 +164,29 @@ public class Character {
     }
 
     /**
-     * Setter method for state field. This method can also be used as a combination getter and setter.
+     * Setter method for state field. This method can also be used as a combination of getter and setter.
      * @param state a boolean which is assigned to Character state.
      * @return First, assign state parameter to Character state. Then, return a true/false (alive/dead) value which is Character state.
      */
     public boolean setState(boolean state) {
         return this.state = state;
     }
-    
 
+
+    /**
+     * Getter method for weapons field.
+     * @return a Set of weapons that Character has.
+     */
     public Set<Weapon> getWeapons() {
         return this.weapons;
     }
 
-    public boolean setWeapon(Weapon weapon) {
+    /**
+     * Setter method for weapons field.
+     * @param weapon a new Weapon which will be added to weapons set.
+     * @return true if new Weapon is added, false otherwise.
+     */
+    public boolean setWeapons(Weapon weapon) {
         if(this.weapons == null) {
             this.weapons = new HashSet<Weapon>();
         }

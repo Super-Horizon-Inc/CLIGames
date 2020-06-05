@@ -1,11 +1,11 @@
 package core.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
-@Entity
 /**
- * A class for monsters of the game.
+ * A class for Monsters of the game.
  */
+@Entity
 public class Monster extends Character {
 
 }
