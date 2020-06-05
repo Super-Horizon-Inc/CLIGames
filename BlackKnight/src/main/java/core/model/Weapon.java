@@ -1,6 +1,7 @@
 package core.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  * A class for Weapons of Characters of the game.
@@ -11,9 +12,13 @@ public class Weapon {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(length = 20)
+
+    //@Column(length = 20)
+    @Size(min = 1, max = 20)
     private String name;
-    @Column(length = 10)
+
+    //@Column(length = 10)
+    @Size(min = 1, max = 20)
     private String type;
 
     /**

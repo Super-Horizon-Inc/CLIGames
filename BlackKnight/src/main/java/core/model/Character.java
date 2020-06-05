@@ -3,6 +3,7 @@ package core.model;
 import org.hibernate.annotations.DiscriminatorFormula;
 import javax.persistence.*;
 import java.util.*;
+import javax.validation.constraints.*;
 
 /**
  * An abstract class for holding common fields, and actions of MainCharacter and Monster classes.
@@ -16,17 +17,32 @@ public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @PositiveOrZero
     private short health;
+
+    @Positive
     private short characterLevel;
-    @Column(length = 50)
+
+    //@Column(length = 50)
+    @Size(min = 1, max = 50)
     private String name;
-    @Column(length = 10)
+
+    //@Column(length = 10)
+    @Size(min = 3, max = 10)
     private String position;
-    @Column(length = 500)
+
+    //@Column(length = 500)
+    @NotNull
     private String image;
+
+    @NotNull
     private boolean state;
-    @Column(length = 20)
+
+    //@Column(length = 20)
+    @Size(min = 1, max = 20)
     private String type;
+
     // Hibernate One-to-Many Association on Join Table Annotations Example
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(

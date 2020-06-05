@@ -1,6 +1,7 @@
 package core.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.*;
 
 /**
@@ -12,8 +13,11 @@ public class Map {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(length = 10)
+
+    //@Column(length = 20)
+    @Size(min = 1, max = 20)
     private String name;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable (
             name = "Map_Characters",
