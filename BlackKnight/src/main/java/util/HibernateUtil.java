@@ -30,11 +30,11 @@ public class HibernateUtil {
 
     public static void main(String[] args) {
 
-        //getSessionFactory();
+        getSessionFactory();
 
         // obtains the session
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
+//        Session session = sessionFactory.openSession();
+//        session.beginTransaction();
 
 
 //        // write our test code
@@ -56,23 +56,23 @@ public class HibernateUtil {
 //        session.persist(char2);
 
 
-        Character char1 = session.find(Character.class, 9);
-        Character char2 = session.find(Character.class, 13);
-
-        Map map1 = new Map();
-        Map map2 = new Map();
-
-        map1.setCharacter(char1);
-        map1.setCharacter(char2);
-
-        map2.setCharacter(char1);
-
-        session.persist(map1);
-        session.persist(map2);
-
-
-        // close up
-        session.getTransaction().commit();
-        shutdown();
+//        Character char1 = session.find(Character.class, 9);
+//        Character char2 = session.find(Character.class, 13);
+//
+//        Map map1 = new Map();
+//        Map map2 = new Map();
+//
+//        map1.setCharacter(char1);
+//        map1.setCharacter(char2);
+//
+//        map2.setCharacter(char1);
+//
+//        session.persist(map1);
+//        session.persist(map2);
+//
+//
+//        // close up
+//        session.getTransaction().commit();
+//        shutdown();
     }
 }
