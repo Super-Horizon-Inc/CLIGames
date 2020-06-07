@@ -14,7 +14,6 @@ public class Map {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    //@Column(length = 20)
     @Size(min = 1, max = 20)
     private String name;
 

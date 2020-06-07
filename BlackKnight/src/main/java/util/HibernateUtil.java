@@ -36,6 +36,8 @@ public class HibernateUtil {
 //        Session session = sessionFactory.openSession();
 //        session.beginTransaction();
 
+//         Character
+
 
 //        // write our test code
 //        Weapon weapon = session.find(Weapon.class,12);
