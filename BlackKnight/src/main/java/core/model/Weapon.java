@@ -13,13 +13,17 @@ public class Weapon {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    //@Column(length = 20)
     @Size(min = 1, max = 20)
     private String name;
 
-    //@Column(length = 10)
-    @Size(min = 1, max = 20)
-    private String type;
+    public Weapon() {
+
+    }
+
+    public Weapon(String name)
+    {
+        this.name = name;
+    }
 
     /**
      * Getter method for id field.
@@ -53,23 +57,6 @@ public class Weapon {
      */
     public String setName(String name) {
         return this.name = name;
-    }
-
-    /**
-     * Getter method for type field.
-     * @return a string which is Weapon type.
-     */
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * Setter method for type field. This method can also be used as a combination of getter and setter.
-     * @param type a string which is assigned to Weapon type.
-     * @return First, assign name parameter to Weapon type. Then, return a string which is Weapon type.
-     */
-    public String setType(String type) {
-        return this.type = type;
     }
 
 }

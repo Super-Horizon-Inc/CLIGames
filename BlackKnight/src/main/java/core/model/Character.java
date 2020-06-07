@@ -24,24 +24,14 @@ public class Character {
     @Positive
     private short characterLevel;
 
-    //@Column(length = 50)
     @Size(min = 1, max = 50)
     private String name;
 
-    //@Column(length = 10)
-    @Size(min = 3, max = 10)
-    private String position;
+    @NotNull
+    private Position position;
 
-    //@Column(length = 500)
     @NotNull
     private String image;
-
-    @NotNull
-    private boolean state;
-
-    //@Column(length = 20)
-    @Size(min = 1, max = 20)
-    private String type;
 
     // Hibernate One-to-Many Association on Join Table Annotations Example
     @OneToMany(cascade = CascadeType.ALL)
@@ -51,6 +41,11 @@ public class Character {
             inverseJoinColumns = @JoinColumn(name = "Weapon_Id", referencedColumnName = "Id")
     )
     private Set<Weapon> weapons;
+
+    public Character() {
+        // used to set default values since Hibernate nor JPA supports setting column default value
+        this.health = (short)100;
+    }
 
     /**
      * Getter method for id field.
@@ -107,7 +102,7 @@ public class Character {
      * Getter method for characterLevel field.
      * @return a short number which is Character level.
      */
-    public short getLevel() {
+    public short getCharacterLevel() {
         return this.characterLevel;
     }
 
@@ -116,7 +111,7 @@ public class Character {
      * @param characterLevel a short number which is assigned to Character level.
      * @return First, assign characterLevel parameter to Character characterLevel. Then, return an integer which is Character level.
      */
-    public short setLevel(short characterLevel) {
+    public short setCharacterLevel(short characterLevel) {
         return this.characterLevel = characterLevel;
     }
 
@@ -139,55 +134,20 @@ public class Character {
 
     /**
      * Getter method for position field.
-     * @return a string which is Character position. The string contains of 2 coordinates separated by a comma.
+     * @return an object which is Character position.
      */
-    public String getPosition() {
+    public Position getPosition() {
         return this.position;
     }
 
     /**
      * Setter method for position field. This method can also be used as a combination of getter and setter.
-     * @param position a string which is assigned to Character position.
-     * @return First, assign position parameter to Character position. Then, return a string which is Character position. The string contains of 2 coordinates separated by a comma.
+     * @param position an object which is assigned to Character position.
+     * @return First, assign position parameter to Character position. Then, return an object which is Character position. The string contains of 2 coordinates separated by a comma.
      */
-    public String setPosition(String position) {
+    public Position setPosition(Position position) {
         return this.position = position;
     }
-
-    /**
-     * Getter method for type field.
-     * @return a string which is Character type.
-     */
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * Setter method for type field. This method can also be used as a combination of getter and setter.
-     * @param type string which is assigned to Character type.
-     * @return First, assign type parameter to Character type. Then, return a string which is Character type.
-     */
-    public String setType(String type) {
-        return this.type = type;
-    }
-
-    /**
-     * Getter method for state field.
-     * @return a true/false (alive/dead) value which is Character state.
-     */
-    public boolean getState() {
-        return this.state;
-    }
-
-    /**
-     * Setter method for state field. This method can also be used as a combination of getter and setter.
-     * @param state a boolean which is assigned to Character state.
-     * @return First, assign state parameter to Character state. Then, return a true/false (alive/dead) value which is Character state.
-     */
-    public boolean setState(boolean state) {
-        return this.state = state;
-    }
-
 
     /**
      * Getter method for weapons field.

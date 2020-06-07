@@ -13,9 +13,17 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    //@Column(length = 20)
     @Size(min = 1, max = 20)
     private String name;
+
+    public Skill() {
+
+    }
+
+    public Skill(String name)
+    {
+        this.name = name;
+    }
 
     /**
      * Getter method for id field.
