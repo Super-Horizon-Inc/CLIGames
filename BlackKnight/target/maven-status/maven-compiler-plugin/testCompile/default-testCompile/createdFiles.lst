@@ -1,1 +1,5 @@
-core\model\AppTest.class
+model\entity\CharacterTest.class
+model\entity\HibernateTest.class
+model\entity\MapTest.class
+model\entity\WeaponTest.class
+model\entity\SkillTest.class
