@@ -1,12 +1,29 @@
-package util;
+package model.entity;
 
-import core.model.*;
-import core.model.Character;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtil {
+// Java program implementing Singleton Design Pattern
+// with getInstance() method
+public class Hibernate {
+
     private static final SessionFactory sessionFactory = buildSessionFactory();
+//    private static Transaction transaction;
+
+    // static variable hibernateUtil of type Singleton
+    private static Hibernate hibernateUtil;
+
+    // private constructor restricted to this class itself
+    private Hibernate(){
+    }
+
+    // static method to create instance of Singleton - HibernateUtil class
+    public static Hibernate getInstance() {
+        if (hibernateUtil == null) {
+            hibernateUtil = new Hibernate();
+        }
+        return hibernateUtil;
+    }
 
     private static SessionFactory buildSessionFactory() {
         try {
@@ -19,18 +36,32 @@ public class HibernateUtil {
         }
     }
 
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
+    // open the session without beginning the transaction
+    public Session getSession() {
+        return sessionFactory.getCurrentSession();
     }
 
-    public static void shutdown() {
-        // Close caches and connection pools
-        getSessionFactory().close();
-    }
+//    // open the session with beginning the transaction
+//    public static Session startupSessionWithTransaction() {
+//        Session session = startupSession();
+//        transaction = session.beginTransaction();
+//        return session;
+//    }
+//
+//    // close the session without transaction
+//    public static void shutdownSession() {
+//        sessionFactory.close();
+//    }
+//
+//    // close the session with transaction
+//    public static void shutdownSessionWithTransaction() {
+//        transaction.commit();
+//        shutdownSession();
+//    }
 
     public static void main(String[] args) {
 
-        getSessionFactory();
+        //getSessionFactory();
 
         // obtains the session
 //        Session session = sessionFactory.openSession();

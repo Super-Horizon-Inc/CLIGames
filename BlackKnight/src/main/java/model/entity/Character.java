@@ -1,4 +1,4 @@
-package core.model;
+package model.entity;
 
 import org.hibernate.annotations.DiscriminatorFormula;
 import javax.persistence.*;
@@ -19,10 +19,10 @@ public class Character {
     private int id;
 
     @PositiveOrZero
-    private short health;
+    private Short health;
 
     @Positive
-    private short characterLevel;
+    private Short characterLevel;
 
     @Size(min = 1, max = 50)
     private String name;
@@ -85,7 +85,7 @@ public class Character {
      * Getter method for health field.
      * @return an integer number which is Character health.
      */
-    public short getHealth() {
+    public Short getHealth() {
         return this.health;
     }
 
@@ -94,7 +94,7 @@ public class Character {
      * @param health an integer number which is assigned to Character health.
      * @return First, assign health parameter to Character health. Then, return an integer which is Character health.
      */
-    public short setHealth(short health) {
+    public Short setHealth(short health) {
         return this.health = health;
     }
 
@@ -102,7 +102,7 @@ public class Character {
      * Getter method for characterLevel field.
      * @return a short number which is Character level.
      */
-    public short getCharacterLevel() {
+    public Short getCharacterLevel() {
         return this.characterLevel;
     }
 
@@ -111,7 +111,7 @@ public class Character {
      * @param characterLevel a short number which is assigned to Character level.
      * @return First, assign characterLevel parameter to Character characterLevel. Then, return an integer which is Character level.
      */
-    public short setCharacterLevel(short characterLevel) {
+    public Short setCharacterLevel(short characterLevel) {
         return this.characterLevel = characterLevel;
     }
 
@@ -162,7 +162,7 @@ public class Character {
      * @param weapon a new Weapon which will be added to weapons set.
      * @return true if new Weapon is added, false otherwise.
      */
-    public boolean setWeapons(Weapon weapon) {
+    public Boolean setWeapons(Weapon weapon) {
         if(this.weapons == null) {
             this.weapons = new HashSet<Weapon>();
         }

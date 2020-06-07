@@ -1,4 +1,4 @@
-package core.model;
+package model.data;
 
 import org.junit.jupiter.api.*;
 import javax.validation.*;

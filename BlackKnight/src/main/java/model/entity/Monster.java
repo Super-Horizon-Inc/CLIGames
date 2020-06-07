@@ -1,7 +1,6 @@
-package core.model;
+package model.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /**
  * A class for Monsters of the game.
@@ -9,13 +8,13 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Monster extends Character {
 
-    private boolean type;
+    private Boolean type;
 
     /**
      * Getter method for type field.
      * @return a boolean(true/false) => (visible/invisible) which is Monster type.
      */
-    public boolean getType() {
+    public Boolean getType() {
         return this.type;
     }
 
@@ -24,7 +23,7 @@ public class Monster extends Character {
      * @param type boolean(true/false) => (visible/invisible) which is assigned to Monster type.
      * @return First, assign type parameter to Monster type. Then, return a boolean which is Monster type.
      */
-    public boolean setType(boolean type) {
+    public Boolean setType(boolean type) {
         return this.type = type;
     }
 

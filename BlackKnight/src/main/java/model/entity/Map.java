@@ -1,4 +1,4 @@
-package core.model;
+package model.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -72,7 +72,7 @@ public class Map {
      * @param character a new Character which will be added to characters set.
      * @return true if new Character is added, false otherwise.
      */
-    public boolean setCharacter(Character character) {
+    public Boolean setCharacter(Character character) {
         if (this.characters == null) {
             this.characters = new HashSet<Character>();
         }

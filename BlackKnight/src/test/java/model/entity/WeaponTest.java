@@ -1,11 +1,11 @@
-package core.model;
+package model.data;
 
 import org.junit.jupiter.api.*;
 import javax.validation.*;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MapTest {
+public class WeaponTest {
     private static Validator validator;
 
     @BeforeAll
@@ -17,9 +17,9 @@ public class MapTest {
 
     @Test
     public void test() {
-        Map map = new Map();
-        map.setName("");
-        Set<ConstraintViolation<Map>> constraintViolations = validator.validate(map);
+        Weapon weapon = new Weapon();
+        weapon.setName("");
+        Set<ConstraintViolation<Weapon>> constraintViolations = validator.validate(weapon);
         assertEquals(1, constraintViolations.size());
         assertEquals("size must be between 1 and 20", constraintViolations.iterator().next().getMessage());
     }

@@ -1,4 +1,4 @@
-package core.model;
+package model.entity;
 
 import javax.persistence.*;
 
@@ -6,10 +6,10 @@ import javax.persistence.*;
 public class Position {
 
     @Column(name = "Position_x")
-    private byte x;
+    private Byte x;
 
     @Column(name = "Position_y")
-    private byte y;
+    private Byte y;
 
     public Position() {
 
@@ -20,19 +20,19 @@ public class Position {
         this.y = y;
     }
 
-    public byte setX(byte x) {
+    public Byte setX(byte x) {
         return this.x = x;
     }
 
-    public byte getX() {
+    public Byte getX() {
         return this.x = x;
     }
 
-    public byte setY(byte y) {
+    public Byte setY(byte y) {
         return this.y = y;
     }
 
-    public byte getY() {
+    public Byte getY() {
         return this.y = y;
     }
 

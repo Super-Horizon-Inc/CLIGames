@@ -1,4 +1,4 @@
-package core.model;
+package model.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -11,7 +11,7 @@ import java.util.*;
 public class MainCharacter extends Character {
 
     @PositiveOrZero
-    private int gold;
+    private Integer gold;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -25,7 +25,7 @@ public class MainCharacter extends Character {
      * Getter method for gold field.
      * @return an integer number which is MainCharacter gold.
      */
-    public int getGold() {
+    public Integer getGold() {
         return this.gold;
     }
 
@@ -34,7 +34,7 @@ public class MainCharacter extends Character {
      * @param gold an integer number which is assigned to MainCharacter gold.
      * @return First, assign gold parameter to MainCharacter gold. Then, return an integer which is MainCharacter gold.
      */
-    public int setGold(int gold) {
+    public Integer setGold(int gold) {
         return this.gold = gold;
     }
 
@@ -51,7 +51,7 @@ public class MainCharacter extends Character {
      * @param skill a new Skill which will be added to skills set.
      * @return true if new Skill is added, false otherwise.
      */
-    public boolean setSkills(Skill skill) {
+    public Boolean setSkills(Skill skill) {
         if(this.skills == null) {
             this.skills = new HashSet<Skill>();
         }

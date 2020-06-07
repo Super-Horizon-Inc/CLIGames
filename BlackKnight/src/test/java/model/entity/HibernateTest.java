@@ -1,9 +1,9 @@
-package util;
+package model.data;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtilTest {
+public class HibernateTest {
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
 

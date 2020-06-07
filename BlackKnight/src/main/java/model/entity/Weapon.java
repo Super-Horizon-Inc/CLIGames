@@ -1,4 +1,4 @@
-package core.model;
+package model.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
