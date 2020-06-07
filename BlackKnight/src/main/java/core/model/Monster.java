@@ -13,7 +13,7 @@ public class Monster extends Character {
 
     /**
      * Getter method for type field.
-     * @return a boolean(true/false) => (visible/invisible) which is Monster type.
+     * @return a boolean(true/false) = (visible/invisible) which is Monster type.
      */
     public boolean getType() {
         return this.type;
@@ -21,7 +21,7 @@ public class Monster extends Character {
 
     /**
      * Setter method for type field. This method can also be used as a combination of getter and setter.
-     * @param type boolean(true/false) => (visible/invisible) which is assigned to Monster type.
+     * @param type boolean(true/false) = (visible/invisible) which is assigned to Monster type.
      * @return First, assign type parameter to Monster type. Then, return a boolean which is Monster type.
      */
     public boolean setType(boolean type) {
