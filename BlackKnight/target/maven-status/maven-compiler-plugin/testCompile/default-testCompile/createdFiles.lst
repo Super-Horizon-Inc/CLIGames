@@ -1,5 +1,5 @@
-core\model\CharacterTest.class
-core\model\MapTest.class
-core\model\SkillTest.class
-core\model\WeaponTest.class
-util\HibernateUtilTest.class
+model\entity\CharacterTest.class
+model\entity\HibernateTest.class
+model\entity\MapTest.class
+model\entity\WeaponTest.class
+model\entity\SkillTest.class
