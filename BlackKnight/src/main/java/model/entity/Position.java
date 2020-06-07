@@ -2,6 +2,9 @@ package model.entity;
 
 import javax.persistence.*;
 
+/**
+ * A class for position of Character
+ */
 @Embeddable
 public class Position {
 
@@ -25,7 +28,7 @@ public class Position {
     }
 
     public Byte getX() {
-        return this.x = x;
+        return this.x;
     }
 
     public Byte setY(byte y) {
@@ -33,7 +36,6 @@ public class Position {
     }
 
     public Byte getY() {
-        return this.y = y;
+        return this.y;
     }
-
 }
